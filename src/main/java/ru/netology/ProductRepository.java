@@ -1,4 +1,5 @@
 package ru.netology;
+
 import ru.netology.Products.Product;
 
 public class ProductRepository {
@@ -24,8 +25,8 @@ public class ProductRepository {
         int lenght = items.length - 1;
         Product[] tmp = new Product[lenght];
         int index = 0;
-        for (Product item : items){
-            if (item.getId() != id){
+        for (Product item : items) {
+            if (item.getId() != id) {
                 tmp[index] = item;
                 index++;
             }
