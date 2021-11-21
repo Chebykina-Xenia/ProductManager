@@ -21,7 +21,7 @@ public class ProductManager {
         Product[] result = new Product[0];
         Product[] products = repository.findAll();
         for(Product product :products){
-        if (matches(product, text)){                 //если метод matches возвращает нам true
+        if (product.matches(text)){                 //если метод matches возвращает нам true
             Product[] tmp = new Product[result.length + 1];
             System.arraycopy(result, 0, tmp, 0, result.length);
             tmp[tmp.length - 1] = product;
@@ -29,25 +29,5 @@ public class ProductManager {
         }
         }
         return result;
-    }
-
-    public boolean matches(Product product, String search) {
-        Product[] result = new Product[0];
-        if (product.getName().contains(search)){
-            return true;
-        }
-        if (product instanceof Book) {
-            Book book = (Book) product;
-            if (book.getAvtor().contains(search)) {
-                return true;
-            }
-        }
-        if (product instanceof Smartphone){
-            Smartphone smartphone = (Smartphone) product;
-            if (smartphone.getMaker().contains(search)){
-                return true;
-            }
-        }
-        return false;
     }
 }

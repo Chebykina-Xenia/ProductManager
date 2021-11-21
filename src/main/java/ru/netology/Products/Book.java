@@ -13,6 +13,11 @@ public class Book extends Product {
         this.avtor = avtor;
     }
 
+    @Override
+    public boolean matches(String text) {
+        return super.matches(text) || avtor.contains(text);
+    }
+
     public String getAvtor() {
         return avtor;
     }

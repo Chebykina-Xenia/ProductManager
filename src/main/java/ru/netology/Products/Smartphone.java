@@ -5,12 +5,17 @@ import java.util.Objects;
 public class Smartphone extends Product {
     private String maker;
 
-    public Smartphone(){
+    public Smartphone() {
     }
 
     public Smartphone(int id, String name, int price, String maker) {
         super(id, name, price);
         this.maker = maker;
+    }
+
+    @Override
+    public boolean matches(String text) {
+        return super.matches(text) || maker.contains(text);
     }
 
     public String getMaker() {
