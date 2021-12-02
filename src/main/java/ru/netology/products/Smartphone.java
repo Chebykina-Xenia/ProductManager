@@ -1,4 +1,4 @@
-package ru.netology.Products;
+package ru.netology.products;
 
 import java.util.Objects;
 
